@@ -1,0 +1,20 @@
+.required {
+  color: red;
+}
+
+#notes {
+  overflow-y: auto;
+}
+
+.btn-group-vertical > button{
+  margin-bottom:30px;
+  border-radius:5px !important;
+}
+
+br {
+  display: block; /* makes it have a width */
+  content: ""; /* clears default height */
+  margin-top: -20px; /* change this to whatever height you want it */
+}
+
+

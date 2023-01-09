@@ -1,0 +1,35 @@
+body {
+  font-family: "Times New Roman" !important;
+  font-size: 10px !important;
+  padding-bottom: 500px;
+  /*text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;*/
+  background-color: #181a1b !important;
+  color: #d1cdc7 !important;
+}
+
+.btn {
+  color: white!important;
+  font-size: 10px!important;
+
+}
+
+
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+router-outlet + * {
+  display: block; 
+  animation: fade 3s;
+}
+
+
+
+
+

@@ -1,0 +1,12 @@
+p { 
+  margin: 0
+}
+
+.btn[disabled] {
+    color: darkgrey !important;
+}
+
+#refreshButton {
+  color: #66FF00 !important;
+}
+

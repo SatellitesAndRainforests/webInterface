@@ -1,0 +1,19 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#location-name {
+  color: gold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+img {
+  border: solid 4px transparent;
+}
+
+img:hover {
+  border: solid 4px blue;
+  border-radius: 4px;
+}

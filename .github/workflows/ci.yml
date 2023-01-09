@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   pull_resuest: 
-    branches: [main]
+  branches: [main]
 
 jobs:
   build:
@@ -21,18 +21,14 @@ jobs:
             with:
               path: ~/.npm
               key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-            restore-keys: |
-              ${{ runner.os }}-node-
-
+              restore-keys: |
+                ${{ runner.os }}-node-
 - name: NPM Install
   run: npm install
-
 - name: NPM Install Angular
   run: npm install -g @angular/cli > /dev/null
-
 - name: Angular build production dist/
   run: ng build --configuration production
-
 - name: Deploy to my EC2 instance
   uses: easingthemes/ssh-deploy@v2.1.5
   with:
@@ -41,10 +37,6 @@ jobs:
     REMOTE_HOST: "ec2-13-41-188-13.eu-west-2.compute.amazonaws.com"
     REMOTE_USER: "ubuntu"
     TARGET: "/var/www/html/dist/client"
-
-
-
-
 
 
 

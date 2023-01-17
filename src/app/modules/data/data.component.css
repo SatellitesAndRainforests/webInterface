@@ -3,7 +3,7 @@ table {
 
 }
 
-#modal {
+#modal .modal-header .modal-body  {
   background-color: black;
   color: white;
 }

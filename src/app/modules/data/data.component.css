@@ -3,7 +3,11 @@ table {
 
 }
 
-tri :hover {
+ng-template {
+  color: black;
+}
+
+tr :hover {
   color: aqua;
 
 }

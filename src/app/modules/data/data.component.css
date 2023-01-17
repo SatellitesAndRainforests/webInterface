@@ -3,6 +3,10 @@ table {
 
 }
 
+tri :hover {
+  color: aqua;
+
+}
 
 .required {
   color: red;

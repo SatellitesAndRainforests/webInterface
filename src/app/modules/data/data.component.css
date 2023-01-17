@@ -3,8 +3,9 @@ table {
 
 }
 
-ng-template {
-  color: black;
+#modal {
+  background-color: black;
+  color: white;
 }
 
 tr :hover {

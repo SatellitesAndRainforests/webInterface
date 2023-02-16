@@ -1,0 +1,48 @@
+#container {
+  padding: 2.54rem;
+}
+
+.mat-card {
+  background: black;
+  color: white;
+  border: solid 1px grey;
+  margin: 10px;
+}
+.mat-card-subtitle {
+  color: grey;
+}
+
+.mat-card-title {
+  font: serif;
+  font-weight: 100;
+}
+
+p { 
+  margin: 0
+}
+
+button {
+  margin: 1px;
+  cursor: pointer;
+
+}
+
+.buttons {
+}
+
+button[disabled] {
+    color: darkgrey;
+    cursor: not-allowed;
+    color: black;
+}
+
+#refreshButton {
+  color: #66FF00 !important;
+  cursor: pointer;
+  background-color: darkgreen;
+  margin-left: 90%;
+  margin-top: 5px;
+
+
+}
+

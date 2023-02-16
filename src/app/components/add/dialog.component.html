@@ -1,0 +1,168 @@
+<p> Upload a new species:  </p> 
+
+
+
+<!--<mat-grid-list cols="2" rowHeight="1:1">
+  <mat-grid-tile id="tile1">
+-->
+
+
+
+<form class="captureForm" (ngSubmit)="onSubmit()">
+
+  <div class="container">
+
+
+    <div class="row justify-content-center">
+      <label class="col-5" for="idStatus">ID Status <span class="required"> *required</span> </label>
+      <select name="idStatus" id="idStatus" [(ngModel)]="idStatus" class="col-5">
+        <option value=""></option>
+        <option value="unidentified">Unidentified</option>
+        <option value="identified">Identified</option>
+      </select>
+      <!--<input type="text" name="idStatus" id="idStatus" placeholder="Identification Status" required>-->
+    </div>
+
+
+    <div class="row justify-content-center">
+      <label for="date" class="col-5">Date</label>
+      <input class ="col-5" type="datetime-local" name="date" id="date" placeholder="Add Date" 
+                                                                        [(ngModel)]="time">
+    </div>
+
+
+
+    <div class="row justify-content-center">
+      <label class="col-5" for="species">Species <span class="required" style="{{ idStatus === 'identified' ? 'display:inline' : 'display:none' }}"> *required</span> </label>
+      <input class="col-5" type="text" name="species" id="species" 
+                                                      placeholder="{{ idStatus === 'unidentified' ? 'Unknown' : 'Add Species' }}" 
+                                                      maxlength="256" [(ngModel)]="species" 
+                                                      disabled="{{ idStatus !== 'identified'  }}">
+    </div>
+
+
+  </div>
+  <div class="container">
+
+    <div class="row justify-content-center">
+      <label class="col-5"for="temperature">Temperature °C</label>
+      <input class="col-5"type="number" name="temperature" value={{temperature}} id="temperature" min="0" max="100" [(ngModel)]="temperature" >
+    </div>
+
+
+      <div class="row justify-content-center">
+        <label class="col-5"for="humidity">Humidity %</label>
+        <input class="col-5"type="number" name="humidity" id="humidity" 
+                                                          min="0" max="100" [(ngModel)]="humidity">
+      </div>
+
+
+      <div class="row justify-content-center">
+        <label class="col-5"for="moon-phase">Moon Phase</label>
+        <select class="col-5"name="moon-phase" id="moon-phase" [(ngModel)]="moonPhase">
+          <option value=""></option>
+          <option value="new moon">New Moon</option>
+          <option value="1/4 moon (right)">1/4 Moon (right)</option>
+          <option value="half moon">Half Moon</option>
+          <option value="5/4 moon (right)">3/4 Moon (right)</option>
+          <option value="full moon">Full Moon</option>
+          <option value="5/4 moon (left)">3/4 Moon (left)</option>
+          <option value="half moon">Half Moon</option>
+          <option value="1/4 moon (left)">1/4 Moon (left)</option>
+        </select>
+        <!--<input type="text" name="moon-phase" id="moon-phase" placeholder="Add Moon Phase"> -->
+      </div>
+
+  </div>
+  <div class="container">
+
+
+
+    <div class="row justify-content-center">
+      <label class="col-5"for="longitude">Longitude <span class="required"> *required</span>  </label>
+      <input class="col-5"type="number" name="longitude" id="longitude" value="{{lon}}" placeholder="Center on Map" min="-180.0000000" max="180.0000000" [(ngModel)]="longitude">
+    </div>
+
+
+    <div class="row justify-content-center">
+      <label class="col-5"for="latitude">Latitude <span class="required"> *required</span>  </label>
+      <input class="col-5"type="number" name="latitude" id="latitude" value="{{lat}}" placeholder="Center on Map" min="-90.0000000" max="90.0000000" [(ngModel)]="latitude">
+    </div>
+
+
+    <div class="row justify-content-center">
+      <label class="col-5"for="notes">Notes</label>
+      <textarea class="col-5" name="notes" id="notes" maxlength="255" [(ngModel)]="notes"></textarea>
+    </div>
+
+  </div>
+  <div class="container">
+
+
+
+
+    <div class="row justify-content-center fileInputLabel">
+      <label class="col-5 "for="image">Upload Image </label>
+      <input class="col-5 fileInput"type="file" multiple value="select" name="selectFile" (change)="onFileSelected($event)" id="image" placeholder="Add Image" accpet="image/png, image.jpeg" >
+
+    </div>
+
+  </div>
+  <div class="container">
+
+
+
+
+<div id="map" class="map" (click)="getCoordinates($event)"> </div>
+
+  </div>
+
+
+
+
+  <div class="submit row justify-content-center">
+    <input class="col-5" type="submit" value="Upload Capture" class="btn"> 
+  </div>
+
+
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  </mat-grid-tile>
+  <mat-grid-tile id="tile2"> 
+-->
+
+<!--
+  </mat-grid-tile>
+  </mat-grid-list>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

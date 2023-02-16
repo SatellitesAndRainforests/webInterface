@@ -1,0 +1,82 @@
+
+<mat-card class="example-card">
+  <a target="_blank" href="http://localhost:4200/assets/captures/{{data.image}}"><img mat-card-image src="assets/captures/{{ data.image }}" alt="Photo of a Shiba Inu"></a>
+
+    <table id="header">
+      <tr>
+        <td class="title"> {{ data.species | titlecase }} </td> 
+        <td [ngStyle]="{'color': (data.idStatus === 'unidentified')? 'red': 'green'}"  > {{ data.idStatus | titlecase }} </td>
+      </tr>
+    </table>
+
+  <table>
+    <tr>
+      <th id="key"></th>
+      <th id="value"></th>
+      <th class="middle"></th>
+      <th></th>
+    </tr>
+    <tr>
+      <td class="key"> Time    </td>
+      <td class="value" > {{ data.time  }}   </td>
+      <td rowspan="6"> <div id="map" class="map"></div>   </td>
+      <td>   </td>
+    </tr>
+
+    <tr>
+      <td class="key">Temp °C </td>
+      <td class="value"> {{ data.temperature }} </td>
+    </tr>
+    <tr>
+      <td class="key" >Humidity</td>
+      <td class="value ">{{data.humidity}}</td>
+    </tr>
+    <tr>
+      <td  class="key" >Moon-phase</td>
+      <td class="value" >{{data.moonPhase | titlecase}}</td>
+    </tr>
+    <tr>
+      <td   class="key">Longitude</td>
+      <td class="value" >{{data.longitude}}</td>
+    </tr>
+    <tr>
+      <td class="key"  >Latitude</td>
+      <td class="value" >{{data.latitude}}</td>
+    </tr>
+
+  </table>
+
+  <mat-card-content>
+    <div class="notes">
+      <p>  {{ data.notes }} </p>  
+    </div>
+
+  </mat-card-content>
+
+
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

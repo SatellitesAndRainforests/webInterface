@@ -1,0 +1,28 @@
+::ng-deep .mat-dialog-container {
+  background-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+img {
+  max-width: 600px;
+  max-height: 600px;
+}
+
+.example-card {
+  background: transparent;
+  max-width: 600px;
+}
+
+.mat-card {
+  padding: 0px;
+  margin: 0px;
+  border: none
+}
+
+

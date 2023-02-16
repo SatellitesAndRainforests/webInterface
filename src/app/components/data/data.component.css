@@ -1,0 +1,130 @@
+#header {
+  background-image: url('../../../assets/jungleHome.png');
+  background-size: cover;
+  height: 2rem;
+}
+
+.mat-button {
+  margin-left: 1px;
+}
+
+#actions {
+  border: 1px solid red;
+}
+
+#page {
+  margin: 2.54rem;
+  height: 10rem;
+  margin-top: 2rem;
+}
+
+
+.text {
+  font-size: 0.8rem;
+  padding-top: 0rem;
+  margin-top: 0.5rem;
+  padding-bottom: 0.8rem;
+}
+
+h1 {
+  font-size: 1.15rem;
+  margin: 0px;
+}
+
+.table {
+  padding-top: 3rem;
+}
+
+.mat-table {
+  width: 100%;
+  height: 100%;
+  border-top: solid grey 1px;
+  border-left: solid grey 1px;
+  border-right: solid grey 1px;
+  border-radius: 2px;
+  background-color:black;
+}
+
+mat-paginator {
+  background-color: black;
+  color: white;
+  border-left: solid grey 0.1px;
+  border-right: solid grey 1px;
+  border-bottom: solid grey 1px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  font-family: Open Sans !important;
+
+}
+
+::ng-deep .mat-paginator-icon {
+  color: white;
+  height: 2rem;
+}
+
+td {
+  color: white;
+  border-bottom: solid 1px grey;
+  font-size: 11px;
+}
+
+th {
+  color: white;
+  font-family: Arial;
+  border-bottom: solid 1px grey;
+}
+
+.tableHeader {
+  height: 1rem;
+}
+
+
+img {
+  height: 70px;
+  float: left;
+  margin: 1px;
+  border-radius: 3px;
+  border: solid transparent 1px;
+}
+
+img:hover {
+  border: solid blue 1px;
+}
+
+
+
+
+.right {
+  position: absolute;
+  right: 2.54rem;
+}
+
+.left {
+  position: absolute;
+  left: 2.54rem;
+}
+
+
+button {
+  background-color: black; /* Green background */
+  border: 1px solid grey; /* Green border */
+  color: white; /* White text */
+  padding: 1px 12px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+
+/* Clear floats (clearfix hack) */
+button:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+button:hover {
+  background-color: white;
+  color: black;
+}
+

@@ -1,0 +1,118 @@
+a {
+  color: blue;
+}
+.map {
+  padding-top: 1.2rem;
+  height: 300px;
+  width: 100%;
+}
+
+#page {
+  padding: 2.54rem;
+  padding-top: 4rem;
+}
+
+.text {
+  font-size: 0.8rem;
+  padding-top: 0rem;
+  margin-top: 0.5rem;
+  padding-bottom: 0.3rem;
+}
+
+h1 {
+  font-size: 1.15rem;
+  padding-top: 3rem;
+  margin: 0px;
+}
+
+.right {
+  position: absolute;
+  right: 2.54rem;
+}
+
+.left {
+  position: absolute;
+  left: 2.54rem;
+}
+
+img {
+  height: 7rem;
+  width: 7rem;
+  margin: 0.1rem;
+}
+
+.ampPress {
+  color: #0324fc !important;
+}
+
+.birdPress {
+  color: rgb(254,192,30) !important;
+}
+
+.mamPress {
+  color: rgb(243,108,66) !important;
+}
+
+.repPress {
+  color: rgb(248,152,52) !important;
+}
+
+.lowPress {
+  color: black !important;
+  background-color: white !important;
+}
+
+.highPress {
+  color: black !important;
+  background-color: white !important;
+}
+
+.maoriPress {
+  color: black !important;
+  background-color: white !important;
+}
+
+.tigerPress {
+  color: black !important;
+  background-color: white !important;
+}
+
+.rainforestPress {
+  color: black !important;
+  background-color: white !important;
+}
+
+
+
+
+
+
+
+
+
+
+.btn-group button {
+  background-color: black; /* Green background */
+  border: 1px solid grey; /* Green border */
+  color: white; /* White text */
+  padding: 1px 12px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: white;
+  color: black;
+}

@@ -1,0 +1,57 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  color: white;
+  height: 2rem;
+  position: fixed;
+  z-index: 2;
+ /* background-color: black; */
+
+  background-image: url('../../../assets/jungleHome.png');
+  background-size: cover;
+
+
+}
+
+
+
+#title:hover {
+  color: #eeedf5;
+  cursor: pointer;
+}
+
+#title {
+  padding-top: 0.15rem;
+  font-size: 1.1rem;
+}
+
+.icon-button {
+  background-color: black;
+  color: white;
+  border: none;
+  transition-duration: 0.4s;
+}
+
+.icon-button:hover {
+  color: green;
+}
+
+button {
+  background: none !important;
+}
+
+
+/* --- sidenav ---  */
+
+mat-sidenav {
+  position: fixed;
+  padding-top: 2rem;
+  background: none;
+  width: 2.54rem;
+}
+
+
+
+

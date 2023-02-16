@@ -1,0 +1,98 @@
+<div id="container">
+
+
+  <div class="" >
+    <button mat-button class="btn btn-outline-dark" id="refreshButton" (click)="refreshNetworkStatus()"> refresh </button> 
+  </div>
+
+
+
+  <mat-card class="deviceCard">
+    <mat-card-header>
+      <mat-card-title> Night-vision Camera </mat-card-title>
+      <mat-card-subtitle> Status:  <span [ngStyle]="{'color': nightVisionCameraIsOnline? 'green' : 'red'}">{{ nightVisionCameraIsOnline? 'online' : 'offline' }}</span>   </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+
+      <div class="" >
+        <button  class=""disabled> Configure</button> <br>
+        <button  class="" (click)="startNvCamCapturing()" [disabled]="nvCamIsCapturing || !nightVisionCameraIsOnline"> Start Night-vision Capturing </button>
+        <button  class="" (click)="stopNvCamCapturing()" [disabled]="!nvCamIsCapturing || !nightVisionCameraIsOnline"> Stop Night-vision Capturing</button>
+        <button  class="" (click)="retrieveImages()" [disabled]="nvCamIsCapturing || !nightVisionCameraIsOnline"> Retrieve Images </button>
+        <button  class="" (click)="open(content)" [disabled]="nvCamIsCapturing || !nightVisionCameraIsOnline" (click)="startLiveStream()"> Watch Live Stream </button>
+      </div>
+
+    </mat-card-actions>
+
+  </mat-card>
+
+
+
+  <mat-card class="deviceCard">
+
+    <mat-card-header>
+      <mat-card-title> Ultra-violet Camera   </mat-card-title>
+      <mat-card-subtitle> Status:  <span [ngStyle]="{'color': cameraTrapIsOnline? 'green' : 'red'}">{{ cameraTrapIsOnline ? 'online' : 'offline' }}</span>     </mat-card-subtitle>
+
+    </mat-card-header>
+
+    <mat-card-actions>
+
+      <div class="buttons" >
+        <button  class=""disabled> Configure</button> <br>
+        <button  class="" disabled> Start Ultra-violet Capturing </button>
+        <button  class=""disabled> Stop Ultra-violet Capturing </button>
+        <button  class=""disabled> Retrieve Images </button>
+        <button  class=""> Watch Live Stream </button>
+      </div>
+
+
+    </mat-card-actions>
+
+  </mat-card>
+
+
+  <mat-card class="deviceCard">
+    <mat-card-header>
+
+      <mat-card-title> Mobile </mat-card-title>
+      <mat-card-subtitle> Status:   <span [ngStyle]="{'color': mobileIsOnline? 'green' : 'red'}">{{ mobileIsOnline ? 'online' : 'offline' }}</span>    </mat-card-subtitle>
+
+    </mat-card-header>
+    <mat-card-content>
+      <p> 
+
+      Primary: 108 MP 1/1.52″ sensor, 0.7μm pixels, f/1.9 lens, <br>
+      Macro: 5 MP sensor, f/2.4 AF lens, <br> 
+      Depth: 2 MP sensor, f/2.4 lens, <br> 
+      Video: 2160p/30 fps, 1080p/30, 60 fps.
+
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+
+    </mat-card-actions>
+  </mat-card>
+
+
+
+
+
+</div>
+
+
+
+
+<!--- Modal ------------------------------------------------>
+<ng-template #content id="modal" let-modal >
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel"> Please wait about 5 seconds</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <!--    <iframe src="http://192.168.1.15/nightVisionCam/" width="100%" height="99%" ></iframe>    -->
+    <!-- <iframe src="http://192.168.1.15/nightVisionCam/min.php" width="100%" height="99%" ></iframe> -->
+    <iframe src="http://10.3.141.1/nightVisionCam/min.php" width="100%" height="99%" ></iframe>
+  </div>
+</ng-template>
+

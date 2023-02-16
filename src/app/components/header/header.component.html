@@ -1,0 +1,66 @@
+
+<mat-toolbar>
+  <button 
+    mat-icon-button 
+    matTooltip="Menu" 
+    matTooltipPosition="below" 
+    class="icon-button" 
+    aria-label=""
+    (click)="sidenav.toggle()"
+    >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span id="title" routerLink="">Rainforest Information System</span>
+  <span class="spacer"></span>
+  <p>‎</p>
+<!--  <button mat-icon-button matTooltip="Dark Mode" matTooltipPosition="below" class="icon-button" aria-label=""><mat-icon>wb_sunny</mat-icon></button>
+  <button mat-icon-button matTooltip="Dark Mode" matTooltipPosition="below" class="icon-button" aria-label=""><mat-icon>camera_roll</mat-icon></button>
+
+-->
+
+ <button 
+   mat-icon-button matTooltip="Website" 
+   matTooltipPosition="below" 
+   onclick=" window.open('http://markstart.s3-website.eu-west-2.amazonaws.com/','_blank') " 
+   class="icon-button" 
+   aria-label=""
+   >
+   <mat-icon>share</mat-icon>
+ </button>
+
+
+</mat-toolbar>
+
+
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav fixedInViewport="true" mode="side" (click)="sidenav.toggle()">
+
+
+    <button color="red" mat-icon-button matTooltip="Home" matTooltipPosition="right" routerLink="/"  class="icon-button" aria-label=""><mat-icon>home</mat-icon></button>
+
+    <mat-divider></mat-divider>
+
+    <button color="#00755e" mat-icon-button matTooltip="World Map" matTooltipPosition="right" routerLink="/worldmap" class="icon-button" aria-label=""><mat-icon>public</mat-icon></button>
+
+
+    <mat-divider></mat-divider>
+
+    <button color="blue" mat-icon-button matTooltip="Species Data" matTooltipPosition="right" class="icon-button" routerLink="/tables" aria-label=""><mat-icon>perm_data_setting</mat-icon></button>
+
+    <mat-divider></mat-divider>
+
+    <button color="orange" mat-icon-button matTooltip="Network" matTooltipPosition="right" class="icon-button" routerLink="/networks" aria-label=""><mat-icon>personal_video</mat-icon></button>
+
+
+
+    <button color="green" mat-icon-button matTooltip="References" matTooltipPosition="right" class="icon-button" routerLink="/refs" aria-label=""><mat-icon>collections_bookmark</mat-icon></button>
+
+
+  </mat-sidenav>
+</mat-sidenav-container>
+
+
+
+
+

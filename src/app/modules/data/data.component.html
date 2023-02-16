@@ -1,4 +1,6 @@
 
+
+
 <div class="p-2 mt-5 table-responsive" id="dataSection"  *ngIf="captures.length !== 0"  >
 
   <table class="table align-middle table-sm table-bordered" >
@@ -13,7 +15,6 @@
     <tbody>
 
       <tr class="" *ngFor = "let capture of captures" [ngClass]="{'table-info': capture.idStatus === 'unidentified'}" >
-
         
         <td class="align-top">  
 

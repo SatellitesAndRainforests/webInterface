@@ -41,7 +41,9 @@ import { NetworkComponent } from './modules/network/network.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

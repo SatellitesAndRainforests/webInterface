@@ -8,13 +8,28 @@ mat-toolbar {
   position: fixed;
   z-index: 2;
  /* background-color: black; */
-
   background-image: url('../../../assets/jungleHome.png');
   background-size: cover;
-
-
 }
 
+::ng-deep .mat-tooltip {
+    color: white !important; 
+    background-color: black;
+    border: 1px solid white;
+}
+
+.shopButton:hover{
+  cursor: not-allowed;
+}
+
+#payPal-button {
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+#payPal-button:hover {
+  cursor: pointer;
+  border: 1.5px solid white;
+}
 
 
 #title:hover {
@@ -28,7 +43,6 @@ mat-toolbar {
 }
 
 .icon-button {
-  background-color: black;
   color: white;
   border: none;
   transition-duration: 0.4s;
@@ -48,9 +62,28 @@ button {
 mat-sidenav {
   position: fixed;
   padding-top: 2rem;
-  background: none;
+  background: black;
+  opacity: 0.95;
   width: 2.54rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

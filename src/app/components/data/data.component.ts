@@ -1,11 +1,11 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { CaptureService } from '../../services/capture.service'
 import { Capture } from '../../Capture';
 import { Image } from '../../Image';
 import { HttpErrorResponse } from '@angular/common/http';
-
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 
 import 'ol/ol.css';
 import Map from 'ol/Map';
@@ -14,8 +14,6 @@ import OSM from 'ol/source/OSM';
 import TileLayer from 'ol/layer/Tile';
 import XYZ from 'ol/source/XYZ';
 import Group from 'ol/layer/Group';
-
-
 
 
 export interface DialogData {
@@ -45,19 +43,33 @@ export interface DialogImageData {
 export class DataComponent {
 
   captures:Capture[] = [];
-  // displayedColumns: string[] = ['id', 'time', 'species', 'idStatus','notes','temp','humidity','moonPhase','lon','lat','images'];
+  // displayedColumns: string[] = ['id', 'time', 'species', 'idStatus','notes',
+  // 'temp','humidity','moonPhase','lon','lat','images'];
   displayedColumns: string[] = ['actions', 'id', 'species', 'idStatus', 'images'];
-
+  dataSource!: MatTableDataSource<Capture>;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   openedCapture!:Capture;
 
   constructor( private captureService: CaptureService, public dialog: MatDialog ) { }
+
+  ngOnInit(): void {
+    this.getCaptures();
+  }
+
+  getCaptures(): void {
+    this.captureService.getCaptures().subscribe(
+      (response: Capture[]) => { 
+        this.dataSource = new MatTableDataSource<Capture>(response);
+        this.dataSource.paginator = this.paginator;
+      },
+      (error: HttpErrorResponse) => { alert(error.message + "\n \nIs the server running ?"); }  ); 
+  }
 
   openDialog( capture:Capture ): void {
     const dialogRef = this.dialog.open(DialogOpenComponent, {
       height: '95%',
       width: '450px',
       data: {
-
         id: capture.id,
         time: capture.time,
         species: capture.species,
@@ -69,26 +81,22 @@ export class DataComponent {
         longitude: capture.longitude,
         latitude: capture.latitude,
         geolocation: capture.geolocation,
-
         image: capture.images[0].fileURL,
-
       },
     });
-
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       console.log(result);
     });
   }
 
-  openImageLarge( imageURL:String ):void {
 
+  openImageLarge( imageURL:String ):void {
     const dialogImageLargeRef = this.dialog.open(DialogImageComponent, {
       data: {
         imageURL: imageURL,
       },      
     });
-
     dialogImageLargeRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       console.log(result);
@@ -98,24 +106,12 @@ export class DataComponent {
   }
 
 
-
-  ngOnInit(): void {
-    this.getCaptures();
-  }
-
-  getCaptures(): void {
-    this.captureService.getCaptures().subscribe(
-      (response: Capture[]) => { 
-        this.captures = response;
-        console.log( this.captures  );
-      },
-      (error: HttpErrorResponse) => { alert(error.message + "\n \nIs the server running ?"); }  ); 
-  }
-
   deleteCapture(capture:Capture) {
     if (window.confirm('Confirm Delete ?')){
-      this.captureService.deleteCapture(capture).subscribe(() =>
-                                                           (this.captures = this.captures.filter((c) => c.id !== capture.id)));
+      this.captureService.deleteCapture(capture).subscribe(
+        //() => ( this.captures = this.captures.filter((c) => c.id !== capture.id) )
+        () => ( this.getCaptures()  )
+      );
     }
   }
 

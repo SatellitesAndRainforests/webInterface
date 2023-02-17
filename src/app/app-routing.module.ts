@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { WorldmapComponent } from './pages/worldmap/worldmap.component';
 import { NetworksComponent } from './pages/networks/networks.component';
 import { RefsComponent } from './pages/refs/refs.component';
+import { TestPageComponent } from './pages/test-page/test-page.component';
 
 const routes: Routes = [
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'worldmap', component: WorldmapComponent },
   { path: 'networks', component: NetworksComponent },
   { path: 'refs', component: RefsComponent },
+  { path: 'test', component: TestPageComponent},
 
 ];
 

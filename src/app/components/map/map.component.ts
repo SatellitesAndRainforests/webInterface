@@ -192,6 +192,13 @@ export class MapComponent implements OnInit {
     // map loads width slightly incorrectly without this line:
     setTimeout(() => { map.updateSize(); });
 
+  this.ampToggle = true;
+  this.mapAmphibians();
+
+
+
+
+
   }
 
 
@@ -204,26 +211,6 @@ export class MapComponent implements OnInit {
    //  this.uiService.newCenter(coordinates);
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs'
 import { Capture } from '../Capture';
+//import { CaptureIn } from '../CaptureIn';
 import { environment } from 'src/environments/environment';
 
 const httpOptions = {
@@ -22,6 +23,12 @@ export class CaptureService {
     const url = `${this.apiServerUrl}/find/every`
     return this.http.get<Capture[]>(url);
   }
+
+/*  getCapturesNew(): Observable<CaptureIn[]> {
+    const url = `${this.apiServerUrl}/find/every`
+    return this.http.get<CaptureIn[]>(url);
+  }*/
+
 
   deleteCapture(capture:Capture): Observable<Capture> {
     const url = `${this.apiServerUrl}/delete/${capture.id}`;

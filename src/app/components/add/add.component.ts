@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit } from '@angular/core';
+import { Output, EventEmitter, Component, Inject, OnInit } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -19,13 +19,14 @@ import Group from 'ol/layer/Group';
 import { createStringXY } from 'ol/coordinate';
 
 
-
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
   styleUrls: ['add.component.css']
 })
 export class AddComponent {
+
+  @Output("getCaptures") getCaptures: EventEmitter<any> = new EventEmitter();
 
   constructor(public dialog: MatDialog) {}
 
@@ -37,7 +38,8 @@ export class AddComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      console.log(result);
+      console.log('here');
+      this.getCaptures.emit();
     });
   }
 
@@ -202,7 +204,7 @@ export class DialogComponent implements OnInit {
 
                 for (var i = 0; i < newCapture.images.length; i++) {
                   formData.append(
-                    'imageFiles',
+                    'imageFiles', // calling it this fixes a bug
                     newCapture.images[i].file,
                     newCapture.images[i].file.name
                   );
@@ -212,6 +214,8 @@ export class DialogComponent implements OnInit {
                 this.captureService.addCapture(formData).subscribe( 
                                                                    (response) => {
                                                                      alert("Sent OK:" + response );
+
+                                                                     // resets values
                                                                      let blankNumber!:number;
                                                                      this.time = '';
                                                                      this.species = '';
@@ -223,6 +227,8 @@ export class DialogComponent implements OnInit {
                                                                      this.longitude = blankNumber;
                                                                      this.latitude = blankNumber;
                                                                      this.images = [];
+
+                                                                     this.onNoClick();
 
                                                                    },
                                                                    (error: HttpErrorResponse) => {

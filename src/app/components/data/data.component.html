@@ -3,12 +3,13 @@
 <div id="page">
 
   <h1> Wildlife Captures </h1>
-  <p class="text left"> Images collected from the wildlife and night vision camera traps. </p> <app-add class="right"></app-add>
+  <p class="text left"> Images collected from the wildlife and night vision camera traps. </p> 
+  <app-add (getCaptures)="getCaptures()" class="right"></app-add>
 
 
 
   <div class="table">
-    <table mat-table [dataSource]="captures" >
+    <table mat-table [dataSource]="dataSource" >
 
       <ng-container matColumnDef="actions">
         <th mat-header-cell  *matHeaderCellDef > Actions </th>
@@ -52,7 +53,7 @@
 
     </table>
 
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+    <mat-paginator [pageSizeOptions]="[5, 10, 25]"
           showFirstLastButtons
           aria-label="Select page of periodic elements">
     </mat-paginator>

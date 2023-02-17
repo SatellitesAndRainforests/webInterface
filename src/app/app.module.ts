@@ -20,6 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 import { HomeComponent } from './pages/home/home.component';
@@ -36,6 +37,8 @@ import { AddComponent, DialogComponent } from './components/add/add.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { ReferencesComponent } from './components/references/references.component';
 import { RefsComponent } from './pages/refs/refs.component';
+import { TestComponent } from './components/test/test.component';
+import { TestPageComponent } from './pages/test-page/test-page.component';
 
 
 
@@ -59,6 +62,8 @@ import { RefsComponent } from './pages/refs/refs.component';
     RefsComponent,
     DialogOpenComponent,
     DialogImageComponent,
+    TestComponent,
+    TestPageComponent,
   ],
   imports: [
     BrowserModule,

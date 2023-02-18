@@ -1,0 +1,7 @@
+button {
+  float: right;
+  cursor: pointer;
+  background: none;
+  color: black;
+  border: none;
+}

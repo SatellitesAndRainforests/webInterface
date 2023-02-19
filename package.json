@@ -42,6 +42,7 @@
     "@angular/router": "^14.1.0",
     "@ng-bootstrap/ng-bootstrap": "^13.0.0",
     "@popperjs/core": "^2.10.2",
+    "angular-cesium": "0.0.1",
     "bootstrap": "^5.2.0",
     "ng-mat-carousel": "^0.11.1",
     "ol": "^7.0.0",

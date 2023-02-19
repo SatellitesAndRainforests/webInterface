@@ -7,6 +7,7 @@ import { WorldmapComponent } from './pages/worldmap/worldmap.component';
 import { NetworksComponent } from './pages/networks/networks.component';
 import { RefsComponent } from './pages/refs/refs.component';
 import { TestPageComponent } from './pages/test-page/test-page.component';
+import { SpaceGlobeComponent } from './pages/space-globe/space-globe.component';
 
 const routes: Routes = [
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'networks', component: NetworksComponent },
   { path: 'refs', component: RefsComponent },
   { path: 'test', component: TestPageComponent},
+  { path: 'globe', component: SpaceGlobeComponent},
 
 ];
 

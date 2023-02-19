@@ -39,6 +39,8 @@ import { ReferencesComponent } from './components/references/references.componen
 import { RefsComponent } from './pages/refs/refs.component';
 import { TestComponent } from './components/test/test.component';
 import { TestPageComponent } from './pages/test-page/test-page.component';
+import { GlobeComponent } from './components/globe/globe.component';
+import { SpaceGlobeComponent } from './pages/space-globe/space-globe.component';
 
 
 
@@ -64,6 +66,8 @@ import { TestPageComponent } from './pages/test-page/test-page.component';
     DialogImageComponent,
     TestComponent,
     TestPageComponent,
+    GlobeComponent,
+    SpaceGlobeComponent,
   ],
   imports: [
     BrowserModule,
